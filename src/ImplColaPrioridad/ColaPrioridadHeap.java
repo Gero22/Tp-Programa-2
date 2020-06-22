@@ -22,7 +22,7 @@ public class ColaPrioridadHeap implements ColaConPrioridadTDA{
 	
 	ImplHepsArr heap = new ImplHepsArr();
 	
-	int inx = 10; // tamaño actual del arbol
+	int inx = 10; // tamaÃ±o actual del arbol
 	Elemento raiz;
 	Elemento [] elementos;
 	
@@ -120,28 +120,6 @@ public class ColaPrioridadHeap implements ColaConPrioridadTDA{
 		}
 	}
 	
-	/*
-	public Elemento HijoIzq(Elemento e) throws Exception{
-		for(int i = 0;i<inx;i++) {
-			if (elementos[i].Valor() == e.Valor()) {
-				return elementos[i*2+1];
-			}
-			else {
-				throw new Exception("El nodo no tiene hijo izquierdo");
-			}
-		}
-	}
-	
-	public Elemento HijoDer(Elemento e) throws Exception{
-		for(int i = 0;i<inx;i++) {
-			if (elementos[i].Valor() == e.Valor()) {
-				return elementos[i*2+2];
-			}
-			else {
-				throw new Exception("El nodo no tiene hijo derecho");
-			}
-		}
-	}
-	*/
+
 	
 }
