@@ -14,12 +14,8 @@ public class ImplHepsArr implements HeapsTDAarr  {
 
 	@Override
 	public void AgregarElem(int x) throws Exception {
-		for (int i = 0;i<size;i++)
-		{
-			if ( arr[i]==x) {
-				throw new Exception ("Valor Repetido");
-			}
-		}
+		
+		
 				
 		if (arr.length == size)
 		{
