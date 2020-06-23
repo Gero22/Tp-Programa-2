@@ -1,10 +1,8 @@
 package ImplColaPrioridad;
 
-//import api.heapsTDA;
 import api.ColaConPrioridadTDA;
-import ImplHeaps.ImplHepsArr;
 
-
+// La estructura de los elementos que se almacenarán en la cola
 class Elemento{
 	int valor;
 	int prioridad;
@@ -20,24 +18,20 @@ class Elemento{
 
 public class ColaPrioridadHeap implements ColaConPrioridadTDA{
 	
-	ImplHepsArr heap = new ImplHepsArr();
+	int inx = 10; // tamaño actual del arbol
+	Elemento [] elementos; // lista para el ordenamiento de los elementos
 	
-	int inx = 10; // tamaÃ±o actual del arbol
-	Elemento raiz;
-	Elemento [] elementos;
-	
-		public void InicializarCola() {
-		raiz = null;
+	public void InicializarCola() {
 		elementos = new Elemento[inx];
 		inx = 0;
 	}
 	
 	public int Primero() {
-		return raiz.valor;
+		return elementos[0].Valor();
 	}
 	
 	public boolean ColaVacia() {
-		return raiz == null;
+		return elementos[0] == null;
 	}
 	
 	
@@ -53,26 +47,17 @@ public class ColaPrioridadHeap implements ColaConPrioridadTDA{
 		
 		elementos[inx] = elemento;
 		inx++;
-		Flotar(inx);
-				
-		/*
-		 * cambio de lugares de nodos (ramas/hojas/raiz) segun elemento.prioridad
-		 */
-		
+		Flotar(inx);		
 	}
 	
-	public void Desacolar() {
-		/*
-		 * eliminar elemento, LA RAIZ, reordenar igual que arriba
-		 */
-		
+	public void Desacolar() {		
 		elementos[0] = elementos[inx-1];
 		inx--;
 		hundir(0);
 	}
 	
 	public int Prioridad() {
-		return elementos[inx-1].prioridad;
+		return elementos[0].prioridad;
 	}
 	
 	public void Mostrar() {
@@ -82,6 +67,11 @@ public class ColaPrioridadHeap implements ColaConPrioridadTDA{
 		}
 	}
 	
+	
+	/*
+	 * Los métodos Flotar(), Hundir() e hijomax() provienen de la implementación de la estructura Heap,
+	 * y están adaptados para funcionar de manera correcta en una cola de prioridad.
+	 */
 	private void Flotar(int x) {
 		while ((x / 2) > 0) {
 			if (elementos[x-1].Prioridad() < elementos[x/2-1].Prioridad()) {
@@ -105,10 +95,6 @@ public class ColaPrioridadHeap implements ColaConPrioridadTDA{
 			}
 			x = nodo;
 		}
-		
-		for (int i=0; i<inx ;i++) {
-			System.out.println(elementos[i].valor + " " + elementos[i].prioridad);
-		}
 	}
 	 
 	public int hijomax(int x) {
@@ -119,7 +105,4 @@ public class ColaPrioridadHeap implements ColaConPrioridadTDA{
 			return (1+x)*2;
 		}
 	}
-	
-
-	
 }
