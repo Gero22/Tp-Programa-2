@@ -1,6 +1,5 @@
-package MisImplementaciones.Estaticas;
+package ImplHeaps;
 
-import java.util.Arrays;
 
 public class HeapSort {
 	
@@ -48,15 +47,6 @@ public class HeapSort {
             heapify(arrA, tamHeap, mayor);
         }
     }
-
-    public static void main(String args[]) {
-        int arrA[] = {5, 8, 6, 1, 4, 7, 3, 9, 2, 0};
-
-        System.out.println("Arreglo original: " + Arrays.toString(arrA));
-        HeapSort heapSort = new HeapSort();
-        heapSort.sort(arrA);
-
-        System.out.println("Arreglo ordenando con Heap Sort: " + Arrays.toString(arrA));
-    }
+   
 
 }
