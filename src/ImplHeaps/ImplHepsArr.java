@@ -61,7 +61,7 @@ public class ImplHepsArr implements HeapsTDAarr  {
 		}
 	}
 	
-	public int hijomax (int x) { // retorna el mayor entre hijo y padre
+	public int hijomax (int x) { // retorna el mayor entre los hijos
 		
 		
 			if (arr[2*(x+1)-1]>arr[(1+x)*2]) {
